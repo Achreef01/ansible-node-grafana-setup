@@ -8,6 +8,6 @@ Our project provides a streamlined solution for deploying monitoring tools such 
 To test the playbooks
 
 ```bash
-  ansible-playbook -i master playbook_name
+  ansible-playbook -i master.ini playbook_name
 ```
 
