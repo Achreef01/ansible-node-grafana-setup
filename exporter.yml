@@ -1,0 +1,28 @@
+---
+- name: Install Prometheus Node Exporter
+  hosts: target_node
+  become: true
+
+  tasks:
+    - name: Install Prometheus Node Exporter
+      apt:
+        name: prometheus-node-exporter
+        state: present
+
+#- name: Configure Prometheus
+#  hosts: localhost
+ # connection: local
+ # become: true
+
+  #tasks:
+  #  - name: Add target to Prometheus configuration
+    #  lineinfile:
+      #  path: /etc/prometheus/prometheus.yml
+      #  line: "      - targets: ['{{ target_node_ip }}:9100']"
+       # insertafter: "  - job_name: 'prometheus'"
+      #notify: Restart Prometheus
+  #handlers:
+   # - name: Restart Prometheus
+      #systemd:
+        #name: prometheus
+       # state: restarted

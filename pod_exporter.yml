@@ -1,0 +1,7 @@
+---
+- name: Run commands on a remote host
+  hosts: master
+  tasks:
+    - name: pod
+      command: ssh -t core@your_ip_address 'sudo -i kubectl exec -it nginx -- apt install -y prometheus-node-exporter'
+

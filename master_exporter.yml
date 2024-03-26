@@ -1,0 +1,6 @@
+---
+- name: Run commands on a remote host
+  hosts: master
+  tasks:
+    - name: Add repo
+      command: ssh -t core@your_ip_address 'sudo -i helm delete prometheus-node-exporter & sudo -i helm repo add prometheus-community https://prometheus-community.github.io/helm-charts & sudo -i helm repo update & sudo -i helm install prometheus-node-exporter prometheus-community/prometheus-node-exporter'
